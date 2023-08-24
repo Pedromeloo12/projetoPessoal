@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url(./src/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.5);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./src/MoonStars.svg)
+}
+
+.ligth{
+    --text-color: black;
+    --bg-url: url(./src/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./src/Sun.svg)
+}
+
+body{
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+
+/* TELA INTEIRA */
+
+
+#container{
+    width: 360px;
+    height: 712px;
+    margin: 56px auto;
+    padding: 0 24px;
+}
+
+
+/* HEADER PERFIL */
+
+
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+}
+
+/* Ou dentro de #profile img você usa display: block e margin auto */
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+}
+
+
+/* BOTÃO DE NOTURNO */
+
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 0;
+    border-radius: 50%;
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.ligth #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+}
+
+
+/* LINKS */
+
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Serve para alinhar os itens em colunas e para aplicar o gap*/
+    gap: 40px; /* Serve para aplicar um espaço entre as colunas*/
+    padding: 24px 0;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* SOCIAL LINKS */
+
+#socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 0;
+    font-size: 25px;
+}
+
+#socialLinks a {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+#socialLinks a:hover {
+    background: var(--highlight-color);
+}
+
+
+/* FOOTER */
+
+
+footer{
+    font-size: 14px;
+    text-align: center;
+    padding: 12px 0;
+}
